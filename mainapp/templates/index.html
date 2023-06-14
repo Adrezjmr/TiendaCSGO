@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+    <h1 style="margin-top: 10px; color: white;" class="display-1 text-center">Titulo generico para tienda de csgo</h1>
+    <p style="font-weight: bold; margin-top: 50px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum voluptatibus obcaecati aspernatur saepe libero, rerum alias quo ratione architecto dolores aperiam ad iure dolorum officia. Blanditiis dolorum quasi esse?</p>
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'img/AK/1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/M4/2.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/AWP/1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+{% endblock %}

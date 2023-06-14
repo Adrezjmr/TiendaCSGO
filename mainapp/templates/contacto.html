@@ -1,0 +1,29 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+
+
+
+  <main class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4 mt-5">
+        <form method="POST" class="card card-body">
+          <h2 class="text-center">Formulario de contacto</h2>
+
+          {% csrf_token %}
+
+          {{form}}
+
+          <button class="btn btn-primary">
+            Enviar
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </main>
+      
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+<h1 style="text-align: center; color: whitesmoke; padding: 10px 0px;">M4</h1>
+
+<div class="row">
+    {% if user.is_authenticated %}
+
+    {% for item in m4a1_items %}
+    <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem; padding: 10px;">
+            <img src="{{ item.imagen.url }}" class="card-img-top" alt="{{ item.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}</h5>
+                <p class="card-text">Precio CLP: $ {{ item.precio }}</p>
+                <a href="#" class="btn btn-success"><i class="fas fa-plus"></i> Agregar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% else %}
+
+    {% for item in m4a1_items %}
+    <div class="col-md-4 mb-4">
+        <div class="card" style="width: 18rem; padding: 10px;">
+            <img src="{{ item.imagen.url }}" class="card-img-top" alt="{{ item.nombre }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.nombre }}</h5>
+                <p class="card-text">Precio CLP: $ {{ item.precio }}</p>
+                <p class="card-text" style="color: red;">Debes estar logueado para comprar</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

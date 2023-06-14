@@ -1,0 +1,36 @@
+body{
+    background:rgb(107, 100, 114);
+}
+
+.carousel-inner img {
+    margin-top: 100px;
+    width: 1024px;
+    max-height: 700px;
+}
+  
+  html,
+  body {
+    height: 95%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  /* Estilos adicionales para el footer si lo deseas */
+  .footer p {
+    font-size: 14px;
+    color: #555;
+  }
+  
