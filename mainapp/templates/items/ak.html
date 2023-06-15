@@ -16,10 +16,11 @@
             <div class="card-body">
                 <h5 class="card-title">{{ item.nombre }}</h5>
                 <p class="card-text">Precio CLP: $ {{ item.precio }}</p>
-                <a href="#" class="btn btn-success"><i class="fas fa-plus"></i> Agregar</a>
+                <a href="{% url 'Add' item.id %}"class="btn btn-primary">Agregar al carrito</a>
             </div>
         </div>
     </div>
+
     {% endfor %}
 
     {% else %}

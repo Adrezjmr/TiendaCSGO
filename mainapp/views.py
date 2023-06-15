@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
+from .carrito import Carrito
 
 
 # Create your views here.
@@ -99,3 +100,29 @@ def m4(request):
 
 def unloged(request):
     return render(request, 'unloged.html')
+
+def carro(request):
+    return render(request, 'carrito.html')
+
+def agregar_producto(request, ak_id):
+    carrito = Carrito(request)
+    producto = ak47.objects.get(id=ak_id)
+    carrito.agregar(producto)
+    return redirect("ak")
+
+def eliminar_producto(request, ak_id):
+    carrito = Carrito(request)
+    producto = ak47.objects.get(id=ak_id)
+    carrito.eliminar(producto)
+    return redirect("ak")
+
+def restar_producto(request, ak_id):
+    carrito = Carrito(request)
+    producto = ak47.objects.get(id=ak_id)
+    carrito.restar(producto)
+    return redirect("ak")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("ak")
